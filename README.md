@@ -1,5 +1,5 @@
 # Monero Integrated Address Generator
-Copyright (c) 2017 Dustin Lemos
+Copyright (c) 2017 Dustin Lemos  
 Copyright (c) 2016 luigi1111
 
 ## About
