@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Integrated Address Demo</title>
+	  <meta charset="utf-8">
+	  <script src="js/jquery.min.js"></script>
+	  <script src="js/crc32.js"></script>
+	  <script src="js/mnemonic.js"></script>
+	  <script src="js/biginteger.js"></script>
+	  <script src="js/config.js"></script>
+	  <script src="js/base58.js"></script>
+	  <script src="js/sha3.js"></script>
+	  <script src="js/cn_util.js?2"></script>
+    <script src="js/addresses.js"></script>
+  </head>
+  <body>
+    <h1>Integrated Address Demo</h1>
+    <p>
+      <input id='input-address' type="text" style="padding: 5px; width: 700px;" placeholder="Enter a standard (netbyte 12) XMR Address" />
+    </p>
+    <button id='generate'>Generate Integrated Address</button>
+    <p>
+      <strong>Address:</strong> <span id='address'></span><br />
+      <strong>Payment ID:</strong> <span id='payment-id'></span><br />
+      <strong>Integrated address:</strong> <span id='integrated-address'></span>
+    </p>
+    <script>
+      $(document).ready(function(){
+        $('#generate').on('click', function() {
+          var address = $('#input-address').val();
+          var result = generateIntegratedAddress(address);
+          $('#address').text(address);
+          $('#integrated-address').text(result.integratedAddress);
+          $('#payment-id').text(result.paymentId);
+        });
+      });
+    </script>
+  </body>
+</html>
